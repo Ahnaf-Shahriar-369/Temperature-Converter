@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #0d3b33, #1a6b5a, #2d9f7d, #4fc3a1);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.container:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(45, 159, 125, 0.3), transparent);
+    animation: borderRotate 10s linear infinite;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+@keyframes borderRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    color: #e6f5f0;
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(45, 159, 125, 0.6);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2d9f7d, transparent);
+}
+
+.input1, .input2, .input3 {
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.input1 label, .input2 label, .input3 label {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.input1 label:hover, .input2 label:hover, .input3 label:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.input1 input, .input2 input, .input3 input {
+    width: 100%;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input1 input:hover, .input2 input:hover, .input3 input:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.input1 input:focus, .input2 input:focus, .input3 input:focus {
+    outline: none;
+    border-color: #2d9f7d;
+    box-shadow: 0 0 10px rgba(45, 159, 125, 0.5);
+    background: rgba(45, 159, 125, 0.1);
+}
+
+.input1 input::placeholder, .input2 input::placeholder, .input3 input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, #2d9f7d, #4fc3a1);
+    border: none;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(45, 159, 125, 0.5);
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .input1 input, .input2 input, .input3 input {
+        padding: 1rem;
+    }
+    
+    .submit-btn {
+        padding: 0.8rem 1.5rem;
+    }
+}
