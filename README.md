@@ -1,0 +1,1 @@
+This website is a temperature converter that allows users to input a temperature in Celsius, Fahrenheit, or Kelvin. It automatically converts the input to the other two units in real-time, displaying the results in a sleek, animated interface with a gradient background.
